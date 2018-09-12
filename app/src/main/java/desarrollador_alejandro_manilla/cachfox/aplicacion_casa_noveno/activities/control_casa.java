@@ -1,4 +1,4 @@
-package desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno;
+package desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.activities;
 
 import android.app.NotificationManager;
 import android.graphics.BitmapFactory;
@@ -18,6 +18,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.R;
 
 public class control_casa extends AppCompatActivity {
     public  static  final int NOTIFICACION_ID=1;

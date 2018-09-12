@@ -5,6 +5,8 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.activities.login;
+
 public class splash extends AppCompatActivity {
     CountDownTimer countDownTimer;
 

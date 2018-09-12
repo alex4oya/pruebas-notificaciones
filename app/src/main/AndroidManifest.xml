@@ -20,9 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login" />
-        <activity android:name=".register" />
-        <activity android:name=".control_casa"></activity>
+        <activity android:name=".activities.login" />
+        <activity android:name=".activities.register" />
+        <activity android:name=".activities.control_casa"></activity>
     </application>
 
 </manifest>
