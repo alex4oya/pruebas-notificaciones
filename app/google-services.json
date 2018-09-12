@@ -1,0 +1,104 @@
+{
+  "project_info": {
+    "project_number": "988981504496",
+    "firebase_url": "https://control-de-una-casa.firebaseio.com",
+    "project_id": "control-de-una-casa",
+    "storage_bucket": "control-de-una-casa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988981504496:android:4d76a429aa558934",
+        "android_client_info": {
+          "package_name": "cachfox.desarrollador_alejandro_manilla.control_de_casa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988981504496-51gc7kpkqkdc77ltjj5hf0sv68jm33pp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6OfGxGLCiBctsj8MWIlVBOWviyppTX7o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988981504496:android:6ffe99ce859094a4",
+        "android_client_info": {
+          "package_name": "cachfox.desarrollador_alejandro_manilla.gerentedelacasa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988981504496-51gc7kpkqkdc77ltjj5hf0sv68jm33pp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6OfGxGLCiBctsj8MWIlVBOWviyppTX7o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988981504496:android:11a63aca08c6efe9",
+        "android_client_info": {
+          "package_name": "desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988981504496-51gc7kpkqkdc77ltjj5hf0sv68jm33pp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6OfGxGLCiBctsj8MWIlVBOWviyppTX7o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
