@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">aplicacion_casa_noveno</string>
+    <string name="password">contraseña</string>
+    <string name="email">correo</string>
+    <string name="ingresar">ingresar</string>
+    <string name="passforget">¿olvidaste tu contraseña?</string>
+    <string name="or">ó</string>
+    <string name="register">registrate</string>
+    <string name="cuenta">¿Ya tienes cuenta?</string>
 </resources>

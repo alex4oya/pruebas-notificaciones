@@ -6,5 +6,47 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".register">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:hint="email"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contraseña"
+        android:hint="password"
+        android:inputType="textPassword"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/registrar"
+                android:text="registrate"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cuenta"
+        android:text="¿Ya tienes cuenta?"
+        android:textAlignment="center"
+        android:paddingTop="10dp"
+        android:clickable="true"
+        />
 
 </LinearLayout>
