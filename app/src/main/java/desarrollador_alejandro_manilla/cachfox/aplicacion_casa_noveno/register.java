@@ -21,6 +21,7 @@ public class register extends AppCompatActivity implements View.OnClickListener 
     TextView cuenta;
     FirebaseAuth auth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,8 @@ public class register extends AppCompatActivity implements View.OnClickListener 
         }
     }
     private void sigUpuser(String correo,final String password) {
+
+
         auth.createUserWithEmailAndPassword(correo,password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -52,10 +55,22 @@ public class register extends AppCompatActivity implements View.OnClickListener 
                         if(!task.isSuccessful()){
                             Toast.makeText(getBaseContext(), "Error: "+task.getException(), Toast.LENGTH_LONG).show();
                         }else{
-                            Toast.makeText(getBaseContext(), "Registro completo", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getBaseContext(), "Registro completo,verifique su correo", Toast.LENGTH_LONG).show();
+                            verificacion();
                             startActivity(new Intent(register.this,login.class));
+
                         }
                     }
                 });
+    }
+    void verificacion (){
+        auth.getCurrentUser()
+        .sendEmailVerification()
+        .addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+            }
+        });
     }
 }

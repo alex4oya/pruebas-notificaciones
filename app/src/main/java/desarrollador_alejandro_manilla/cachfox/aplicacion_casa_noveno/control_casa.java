@@ -3,11 +3,16 @@ package desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno;
 import android.app.NotificationManager;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
+import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,29 +25,16 @@ public class control_casa extends AppCompatActivity {
     DatabaseReference texto =mdatabasereference.child("texto1");
     String mensaje;
     TextView texto1;
+    FirebaseAuth auth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control_casa);
         texto1=(TextView)findViewById(R.id.texto1);
-
-
-
-        texto.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                notificacion();
-                mensaje=dataSnapshot.getValue().toString();
-                texto1.setText(mensaje);
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+        auth= FirebaseAuth.getInstance();
+        verificacion();
 
     }
 
@@ -58,5 +50,34 @@ public class control_casa extends AppCompatActivity {
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
         NotificationManager notificacion=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         notificacion.notify(NOTIFICACION_ID,builder.build());
+    }
+    void verificacion (){
+        auth.getCurrentUser()
+                .reload()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(auth.getCurrentUser().isEmailVerified()==true){
+                            texto.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    mensaje=dataSnapshot.getValue().toString();
+                                    notificacion();
+
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
+
+                        }else{
+                            Toast.makeText(getApplicationContext(),"verifique el correo "+"\n"+auth.getCurrentUser().getEmail(),Toast
+                            .LENGTH_LONG).show();
+                            finish();
+                        }
+                    }
+                });
     }
 }
