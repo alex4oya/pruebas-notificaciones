@@ -9,5 +9,7 @@ public class control_casa extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control_casa);
+
+
     }
 }
