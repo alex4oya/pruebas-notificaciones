@@ -6,6 +6,7 @@ import android.media.RingtoneManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,11 +19,13 @@ public class control_casa extends AppCompatActivity {
     DatabaseReference mdatabasereference = FirebaseDatabase.getInstance().getReference();
     DatabaseReference texto =mdatabasereference.child("texto1");
     String mensaje;
+    TextView texto1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control_casa);
+        texto1=(TextView)findViewById(R.id.texto1);
 
 
 
@@ -31,6 +34,7 @@ public class control_casa extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 notificacion();
                 mensaje=dataSnapshot.getValue().toString();
+                texto1.setText(mensaje);
 
             }
 
