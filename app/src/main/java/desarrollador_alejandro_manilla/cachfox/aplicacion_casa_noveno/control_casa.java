@@ -35,6 +35,23 @@ public class control_casa extends AppCompatActivity {
         texto1=(TextView)findViewById(R.id.texto1);
         auth= FirebaseAuth.getInstance();
         verificacion();
+//esto de el texto activa la notificacion, una ves que se cambie
+// el dato en la base de datos guarda el string en mensaje y lo lanza en la notificacion
+        //quiero hacer el seervicio que obtenga el dato aunque la app este cerrrada
+        //y lance la notificacion
+        texto.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                mensaje=dataSnapshot.getValue().toString();
+                notificacion();
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
     }
 
@@ -58,19 +75,7 @@ public class control_casa extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(auth.getCurrentUser().isEmailVerified()==true){
-                            texto.addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    mensaje=dataSnapshot.getValue().toString();
-                                    notificacion();
 
-                                }
-
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-
-                                }
-                            });
 
                         }else{
                             Toast.makeText(getApplicationContext(),"verifique el correo "+"\n"+auth.getCurrentUser().getEmail(),Toast
