@@ -1,6 +1,7 @@
 package desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.activities;
 
 import android.app.NotificationManager;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.R;
+import desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.servicios.notificacion;
 
 public class control_casa extends AppCompatActivity {
     public  static  final int NOTIFICACION_ID=1;
@@ -41,7 +43,7 @@ public class control_casa extends AppCompatActivity {
 // el dato en la base de datos guarda el string en mensaje y lo lanza en la notificacion
         //quiero hacer el seervicio que obtenga el dato aunque la app este cerrrada
         //y lance la notificacion
-        texto.addValueEventListener(new ValueEventListener() {
+  /*      texto.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 mensaje=dataSnapshot.getValue().toString();
@@ -53,12 +55,14 @@ public class control_casa extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });
+        });*/
+        Intent servicio=new Intent(control_casa.this,notificacion.class);
+        startService(servicio);
 
     }
 
 
-    public void notificacion(){
+  /*  public void notificacion(){
         NotificationCompat.Builder builder=new NotificationCompat.Builder(this);
         builder.setSmallIcon(R.drawable.ic_launcher_background)
                 .setContentTitle("el nuevo mensaje dice")
@@ -69,7 +73,7 @@ public class control_casa extends AppCompatActivity {
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
         NotificationManager notificacion=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         notificacion.notify(NOTIFICACION_ID,builder.build());
-    }
+    }*/
     void verificacion (){
         auth.getCurrentUser()
                 .reload()
