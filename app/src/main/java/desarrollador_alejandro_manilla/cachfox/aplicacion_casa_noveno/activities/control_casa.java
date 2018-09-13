@@ -24,9 +24,7 @@ import desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.R;
 import desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.servicios.notificacion;
 
 public class control_casa extends AppCompatActivity {
-    public  static  final int NOTIFICACION_ID=1;
     DatabaseReference mdatabasereference = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference texto =mdatabasereference.child("texto1");
     String mensaje;
     TextView texto1;
     FirebaseAuth auth;
@@ -39,41 +37,11 @@ public class control_casa extends AppCompatActivity {
         texto1=(TextView)findViewById(R.id.texto1);
         auth= FirebaseAuth.getInstance();
         verificacion();
-//esto de el texto activa la notificacion, una ves que se cambie
-// el dato en la base de datos guarda el string en mensaje y lo lanza en la notificacion
-        //quiero hacer el seervicio que obtenga el dato aunque la app este cerrrada
-        //y lance la notificacion
-  /*      texto.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                mensaje=dataSnapshot.getValue().toString();
-                notificacion();
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });*/
         Intent servicio=new Intent(control_casa.this,notificacion.class);
         startService(servicio);
 
     }
 
-
-  /*  public void notificacion(){
-        NotificationCompat.Builder builder=new NotificationCompat.Builder(this);
-        builder.setSmallIcon(R.drawable.ic_launcher_background)
-                .setContentTitle("el nuevo mensaje dice")
-                .setContentText(""+mensaje)
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setAutoCancel(true)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher_background))
-                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
-        NotificationManager notificacion=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        notificacion.notify(NOTIFICACION_ID,builder.build());
-    }*/
     void verificacion (){
         auth.getCurrentUser()
                 .reload()
