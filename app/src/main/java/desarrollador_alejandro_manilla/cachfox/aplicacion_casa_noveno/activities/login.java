@@ -16,6 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.R;
+import desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.pruebas.prueba_grid;
 
 public class login extends AppCompatActivity implements View.OnClickListener {
     EditText email,contraseña;
@@ -39,7 +40,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         ///////////////////////////////
         auth= FirebaseAuth.getInstance();
         if (auth.getCurrentUser()!=null){//si  esta logeado manda a la pantalla de validacion
-            Intent cambio=new Intent(login.this,control_casa.class);
+            Intent cambio=new Intent(login.this,prueba_grid.class);
             startActivity(cambio);
             finish();
         }
@@ -64,7 +65,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                                 Toast.makeText(getBaseContext(), "la contraseña debe ser mayor a 8 caracteres", Toast.LENGTH_LONG).show();
 
                             }else{
-                                startActivity(new Intent(login.this,control_casa.class));
+                                startActivity(new Intent(login.this,prueba_grid.class));
                                 finish();
                             }
                         }

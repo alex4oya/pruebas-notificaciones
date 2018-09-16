@@ -1,12 +1,12 @@
 package desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.adaptadores;
 
-public class vista_sala_focos {
-    private String uid,dato;
-    vista_sala_focos(){
+public class sala {
+    String uid,dato;
 
+    sala() {
     }
 
-    public vista_sala_focos(String uid, String dato) {
+    public sala(String uid, String dato) {
         this.uid = uid;
         this.dato = dato;
     }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -13,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".splash">
+        <activity android:name=".activities.splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,13 +23,14 @@
         </activity>
         <activity android:name=".activities.login" />
         <activity android:name=".activities.register" />
-        <activity android:name=".activities.control_casa">
+        <activity android:name=".adaptadores.control_casa" />
 
-        </activity>
+        <service
+            android:name=".servicios.notificacion"
+            android:enabled="true" />
 
-        <service android:name=".servicios.notificacion" android:enabled="true">
-
-        </service>
+        <activity android:name=".activities.principal" />
+        <activity android:name=".pruebas.prueba_grid"></activity>
     </application>
 
 </manifest>

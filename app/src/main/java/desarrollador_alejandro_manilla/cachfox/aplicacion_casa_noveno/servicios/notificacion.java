@@ -21,13 +21,15 @@ import desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.R;
 public class notificacion extends Service {
     FirebaseAuth auth;
     public  static  final int NOTIFICACION_ID=1;
-    String mensaje;
+    String mensaje,id;
     DatabaseReference mdatabasereference = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference texto =mdatabasereference.child("texto1");
+
 
     public void onCreate(){
         super.onCreate();
         auth= FirebaseAuth.getInstance();
+        id=auth.getCurrentUser().getUid();
+        DatabaseReference texto =mdatabasereference.child(id).child("sala").child("focos").child("1").child("dato");
         texto.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
