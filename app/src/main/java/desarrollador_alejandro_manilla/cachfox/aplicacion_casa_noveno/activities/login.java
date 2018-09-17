@@ -40,7 +40,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         ///////////////////////////////
         auth= FirebaseAuth.getInstance();
         if (auth.getCurrentUser()!=null){//si  esta logeado manda a la pantalla de validacion
-            Intent cambio=new Intent(login.this,prueba_grid.class);
+            Intent cambio=new Intent(login.this,principal.class);
             startActivity(cambio);
             finish();
         }
@@ -65,7 +65,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                                 Toast.makeText(getBaseContext(), "la contraseña debe ser mayor a 8 caracteres", Toast.LENGTH_LONG).show();
 
                             }else{
-                                startActivity(new Intent(login.this,prueba_grid.class));
+                                startActivity(new Intent(login.this,principal.class));
                                 finish();
                             }
                         }

@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#D32F2F</color>
     <color name="colorAccent">#8BC34A</color>
     <color name="acentoObscuro">#D32F2F</color>
+    <color name="blanco">#ffffff</color>
 </resources>
