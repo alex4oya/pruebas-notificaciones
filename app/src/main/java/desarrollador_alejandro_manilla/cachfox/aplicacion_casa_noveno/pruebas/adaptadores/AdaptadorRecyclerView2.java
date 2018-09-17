@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.ActivityGroup;
 import android.content.Context;
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -31,6 +32,7 @@ class RecyclerViewHolder2 extends RecyclerView.ViewHolder implements View.OnClic
     public ImageView imageView;
     public TextView textView;
     public ItemClickListener itemClickListener;
+
 
 
     public RecyclerViewHolder2(View itemView) {
@@ -89,10 +91,38 @@ public class AdaptadorRecyclerView2 extends RecyclerView.Adapter<RecyclerViewHol
             holder.imageView.setImageResource(apagado);
         holder.setItemClickListener(new ItemClickListener() {
             @Override
-            public void onClick(View view, int position, boolean isLongClick) {
+            public void onClick(View view, final int position, boolean isLongClick) {
                 if(isLongClick){
+                    holder.textView.setText("clickeado largo");
+                    CountDownTimer countDownTimer;
+                    countDownTimer=new CountDownTimer(2000,500) {
+                        @Override
+                        public void onTick(long millisUntilFinished) {
 
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            holder.textView.setText(listdata.get(position).getUid());
+
+                        }
+                    }.start();
+                }else{
+                    holder.textView.setText("clickeado");
+                    CountDownTimer countDownTimer;
+                    countDownTimer=new CountDownTimer(2000,500) {
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            holder.textView.setText(listdata.get(position).getUid());
+                        }
+                    }.start();
                 }
+
             }
         });
     }

@@ -115,7 +115,7 @@ public class prueba_grid extends AppCompatActivity {
         listData.add(new Data(R.drawable.ic_foco_apagado2,"apagado dos"));
         listData.add(new Data(R.drawable.ic_foco_prendido2,"prendido 2"));
         listData.add(new Data(R.drawable.ic_carro,"carro"));
-        listData.add(new Data(R.drawable.ic_launcher_foreground,"andi"));
+
 
         listData.add(new Data(R.drawable.ic_carro,"carro"));
         listData.add(new Data(R.drawable.ic_copo_nieve,"nieve"));
@@ -124,7 +124,7 @@ public class prueba_grid extends AppCompatActivity {
         listData.add(new Data(R.drawable.ic_foco_apagado2,"apagado dos"));
         listData.add(new Data(R.drawable.ic_foco_prendido2,"prendido 2"));
         listData.add(new Data(R.drawable.ic_carro,"carro"));
-        listData.add(new Data(R.drawable.ic_launcher_foreground,"andi"));
+
 
 
     }
