@@ -30,7 +30,9 @@
             android:enabled="true" />
 
         <activity android:name=".activities.principal" />
-        <activity android:name=".pruebas.prueba_grid"></activity>
+        <activity android:name=".pruebas.prueba_grid" />
+        <activity android:name=".objetos.objetos" />
+        <activity android:name=".habitaciones.habitacion"></activity>
     </application>
 
 </manifest>

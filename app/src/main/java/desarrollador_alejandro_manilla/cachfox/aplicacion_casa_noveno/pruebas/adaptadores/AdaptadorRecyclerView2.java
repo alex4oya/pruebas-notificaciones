@@ -13,6 +13,7 @@ import android.view.TouchDelegate;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,7 +33,6 @@ class RecyclerViewHolder2 extends RecyclerView.ViewHolder implements View.OnClic
     public ImageView imageView;
     public TextView textView;
     public ItemClickListener itemClickListener;
-
 
 
     public RecyclerViewHolder2(View itemView) {
@@ -93,6 +93,9 @@ public class AdaptadorRecyclerView2 extends RecyclerView.Adapter<RecyclerViewHol
             @Override
             public void onClick(View view, final int position, boolean isLongClick) {
                 if(isLongClick){
+
+
+
                     holder.textView.setText("clickeado largo");
                     CountDownTimer countDownTimer;
                     countDownTimer=new CountDownTimer(2000,500) {
@@ -126,6 +129,7 @@ public class AdaptadorRecyclerView2 extends RecyclerView.Adapter<RecyclerViewHol
             }
         });
     }
+
 
 
     @Override

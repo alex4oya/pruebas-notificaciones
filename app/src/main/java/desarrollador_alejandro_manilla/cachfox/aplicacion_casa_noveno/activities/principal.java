@@ -115,6 +115,7 @@ public class principal extends AppCompatActivity {
                 //Toast.makeText(getBaseContext(),""+t,Toast.LENGTH_LONG).show();
                 if(Listadatos.size()>0)
                     Listadatos.clear();
+                lista.setVisibility(View.GONE);
                 try {
                     for (DataSnapshot postSnapshot:dataSnapshot.getChildren()){
                        DatosBasicos datosBasicos=postSnapshot.getValue(DatosBasicos.class);
@@ -161,9 +162,5 @@ public class principal extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public  void showInputBox(String oldItem,final int index){
-
-
-    }
 
 }

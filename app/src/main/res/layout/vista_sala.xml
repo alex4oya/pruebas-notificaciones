@@ -8,7 +8,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:id="@+id/Imagen" />
+        android:id="@+id/Imagen"
+        android:src="@drawable/ic_carro"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

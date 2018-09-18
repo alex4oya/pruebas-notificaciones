@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.R;
+import desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.objetos.objetos;
+import desarrollador_alejandro_manilla.cachfox.aplicacion_casa_noveno.pruebas.prueba_grid;
 
 public class splash extends AppCompatActivity {
     CountDownTimer countDownTimer;
@@ -23,10 +25,8 @@ public class splash extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Intent hola=new Intent(splash.this,login.class);
+                Intent hola=new Intent(splash.this,objetos.class);
                 startActivity(hola);
-
-
             }
         }.start();
         //
